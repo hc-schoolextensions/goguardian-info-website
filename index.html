@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGuardian Blocked URL Info</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1 id="message" style="font-family: 'Roboto', sans-serif; width: 600px; text-align: center;">GoGuardian Blocked URL Info</h1>
+    <div id="container">
+        <input type="url" name="url" id="urlinput" autocomplete="off" autofocus placeholder="Paste URL Here">
+        <br>
+        <button onclick="loadinfo()" id="loadinfo">Load Info</button>
+    </div>
+    <script>
+        var input = document.getElementById("urlinput");
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("loadinfo").click();
+            }
+        });
+        function loadinfo() {
+            window.location = location.protocol + "//" + location.host + "/info/#" + input.value;
+        }
+    </script>
+</body>
+
+</html>
