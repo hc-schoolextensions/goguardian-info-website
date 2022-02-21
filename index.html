@@ -1,78 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WF6DLDD');</script>
-    <script id="bdc-ipaddress-push" type="text/javascript">
-        var ipaddress;
-        var useragent;
-        var hBDC = new XMLHttpRequest();
-        var bdcApi = "https://api.bigdatacloud.net/data/client-info";
-        var outputBDC = {};
-        hBDC.open("GET", bdcApi);
-        hBDC.send();
-        hBDC.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                outputBDC = JSON.parse(this.responseText);
-                ipaddress = outputBDC.ipString;
-                useragent = outputBDC.userAgentRaw;
-            }
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'bdc-ipaddress': outputBDC.ipString,
-                'bdc-useragent': outputBDC.userAgentRaw
-            });
-        };
-    </script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoGuardian Blocked URL Info</title>
-    <link rel="stylesheet" href="/styleh.css">
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-90VWPSQ16H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-90VWPSQ16H');
-    </script>
+    <meta http-equiv="refresh" content="0; url=/home.html">
+    <title>Loading...</title>
 </head>
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF6DLDD" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <h1 id="message" style="font-family: 'Roboto', sans-serif; width: 600px; text-align: center;">GoGuardian Blocked URL
-        Info</h1>
-    <div id="container">
-        <input type="url" name="url" id="urlinput" autocomplete="off" autofocus placeholder="Paste URL Here">
-        <br>
-        <button onclick="loadinfo()" id="loadinfo">Load Info</button>
-    </div>
-    <script>
-        var input = document.getElementById("urlinput");
-        input.addEventListener("keyup", function (event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("loadinfo").click();
-            }
-        });
-        function loadinfo() {
-            window.location = location.protocol + "//" + location.host + "/info.html#" + input.value;
-        }
-    </script>
+    
 </body>
-
 </html>
