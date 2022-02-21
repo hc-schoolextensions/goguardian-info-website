@@ -25,19 +25,12 @@
                 ipaddress = outputBDC.ipString;
                 useragent = outputBDC.userAgentRaw;
             }
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'bdc-ipaddress': outputBDC.ipString,
+                'bdc-useragent': outputBDC.userAgentRaw
+            });
         };
-        var ipvr = new XMLHttpRequest();
-        var ipvu = "https://api64.ipify.org?format=json";
-        var ipv = {};
-        var ipv6;
-        ipvr.open("GET", ipvu);
-        ipvr.send();
-        ipvr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                ipv = JSON.parse(this.responseText);
-                ipv6 = ipv.ip;
-            }
-        }
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
