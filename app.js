@@ -14,6 +14,11 @@ var api = "";
 if (apitxt != null) {
     api = "<strong>API ID: </strong>" + ctxdataurlsearchparams.get('api') + '<br>';
 }
+var tsitext = ctxdataurlsearchparams.get('tsi');
+var tsi = "";
+if (tsitext != null) {
+    tsi = "<strong>TSI: </strong>" + ctxdataurlsearchparams.get('tsi') + '<br>';
+}
 var organizationid = "<strong>Orgaization ID: </strong>" + ctxdataurlsearchparams.get('oi') + '<br>';
 var blockedurl = "<strong>Blocked URL: </strong>" + decodeURI(ctxdataurlsearchparams.get('ou')) + '<br>';
 
@@ -30,6 +35,9 @@ else if (blockedreasonone == "ADMIN_SITE_FILTER") {
 else if (blockedreasonone == "BLOCK_CONSUMER_ACCOUNTS") {
     blockedreason = "<strong>Blocked Reason: </strong>GoGuardian Admin Block Consumer Accounts<br>";
 }
+else if (blockedreasonone == "TEACHER_SCENE") {
+    blockedreason = "<strong>Blocked Reason: </strong>Teacher Scene<br>";
+}
 else {
     blockedreason = "<strong>Blocked Reason: </strong>" + blockedreasonone + "<br>";
 }
@@ -39,10 +47,10 @@ var priority = "<strong>Priority: </strong>" + ctxdataurlsearchparams.get('v');
 var prefix = "<p id='prefix' style='font-weight: 500 bolder;'><strong style='font-weight: 500 bolder;'>GoGuardian Block Page Info</strong></p>"
 var full;
 if (categoryid == undefined) {
-    full = prefix + afi + api + organizationid + blockedurl + blockedreason + browser + priority;
+    full = prefix + afi + api + organizationid + blockedurl + blockedreason + tsi + browser + priority;
 }
 else {
-    full = prefix + afi + api + organizationid + blockedurl + blockedreason + categoryid + browser + priority;
+    full = prefix + afi + api + organizationid + blockedurl + blockedreason + tsi + categoryid + browser + priority;
 }
 document.getElementById('data').innerHTML = full;
 
